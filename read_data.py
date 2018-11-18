@@ -1,31 +1,39 @@
 import os
 import pickle
-os.chdir("..")
-os.chdir("..")
-os.chdir("..")
-os.chdir("..")
-os.chdir("media/jac/New Volume/Datasets/WESAD")
-print(os.listdir())
-
+data_set_path = "/media/jac/New Volume/Datasets/WESAD"
 subject = 'S3'
-keys = ['label', 'subject', 'signal']
-signal_keys = ['wrist', 'chest']
-chest_sensor_keys = ['ACC', 'ECG', 'EDA', 'EMG', 'RESP', 'TEMP']
-wrist_sensor_keys = ['ACC', 'BVP', 'EDA', 'TEMP']
 
-os.chdir(subject)
 
-with open(subject+'.pkl', 'rb') as file:
-    data = pickle.load(file, encoding='latin1')
+def load_data(self, path, subject):
+    os.chdir(path)
+    os.chdir(subject)
+    with open(subject + '.pkl', 'rb') as file:
+        data = pickle.load(file, encoding='latin1')
+    return data
 
-label = data[keys[0]]
-assert subject == data[keys[1]]
-signal = data[keys[2]]
-wrist_data = signal[signal_keys[0]]
-chest_data = signal[signal_keys[1]]
-wrist_ACC = wrist_data[wrist_sensor_keys[0]]
-wrist_ECG = wrist_data[wrist_sensor_keys[1]]
+class read_data:
+    """Read data from WESAD dataset"""
+    def __init__(self, data):
+        self.keys = ['label', 'subject', 'signal']
+        self.signal_keys = ['wrist', 'chest']
+        self.chest_sensor_keys = ['ACC', 'ECG', 'EDA', 'EMG', 'RESP', 'TEMP']
+        self.wrist_sensor_keys = ['ACC', 'BVP', 'EDA', 'TEMP']
+        self.data = data
 
-print(label.size) #4545100
-print(wrist_ACC.size) #623328
-print(wrist_ECG.size) #415552
+    def get_label(self):
+        return self.data[self.keys[0]]
+
+    def get_wrist_data(self):
+        label = self.data[self.keys[0]]
+        assert subject == self.data[self.keys[1]]
+        signal = self.data[self.keys[2]]
+        wrist_data = signal[self.signal_keys[0]]
+        chest_data = signal[self.signal_keys[1]]
+        wrist_ACC = wrist_data[self.wrist_sensor_keys[0]]
+        wrist_ECG = wrist_data[self.wrist_sensor_keys[1]]
+
+if __name__ == '__main__':
+    #print(label.size)  # 4545100
+    #print(wrist_ACC.size)  # 623328
+    #print(wrist_ECG.size)  # 415552
+    print("Test")
