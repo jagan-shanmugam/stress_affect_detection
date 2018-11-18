@@ -5,6 +5,7 @@ subject = 'S3'
 
 
 def load_data(self, path, subject):
+    """Given path and subject, load the data of the subject"""
     os.chdir(path)
     os.chdir(subject)
     with open(subject + '.pkl', 'rb') as file:
@@ -37,3 +38,4 @@ if __name__ == '__main__':
     #print(wrist_ACC.size)  # 623328
     #print(wrist_ECG.size)  # 415552
     print("Test")
+    #Flow: Read data for all subjects -> Extract features (Preprocessing) -> Train the model
