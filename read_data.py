@@ -28,4 +28,4 @@ wrist_ECG = wrist_data[wrist_sensor_keys[1]]
 
 print(label.size) #4545100
 print(wrist_ACC.size) #623328
-print(wrist_ECG.size)
+print(wrist_ECG.size) #415552
