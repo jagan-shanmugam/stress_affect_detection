@@ -1,6 +1,6 @@
-# Stress_and_Affect_detection
+# Stress and Affect detection using WESAD dataset
 Stress and Affect detection using WESAD dataset
-Using Wearable Stress and Affect Detection dataset, training machine learning models such as Gaussian Mixture Model classifier,
+Using WEarable Stress and Affect Detection (WESAD) dataset, training machine learning models such as Gaussian Mixture Model classifier,
 Random forests to classify Stress vs. Non-stress and also Stress vs. Neutral vs. Amusement. 
 
 Binary classification problem: Stress vs. Non-stress 
