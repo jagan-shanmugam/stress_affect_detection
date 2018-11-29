@@ -29,6 +29,7 @@ class read_data_of_one_subject:
         return self.data[self.keys[0]]
 
     def get_wrist_data(self):
+        """"""
         #label = self.data[self.keys[0]]
         assert subject == self.data[self.keys[1]]
         signal = self.data[self.keys[2]]
@@ -38,6 +39,7 @@ class read_data_of_one_subject:
         return wrist_data
 
     def get_chest_data(self):
+        """"""
         signal = self.data[self.keys[2]]
         chest_data = signal[self.signal_keys[1]]
         return chest_data
