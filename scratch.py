@@ -33,8 +33,8 @@ X, y = make_classification(n_samples=10000, n_features=6,
                             n_informative=3, n_redundant=0,
                             random_state=0, shuffle=True)
 
-print(X.shape)
-print(y)
+print(X.shape)  # 10000x6
+print(y)        # 10000
 
 # TODO: Feature extraction using sliding window
 
@@ -59,6 +59,7 @@ print(clf.oob_score_)
 predictions = clf.predict(test_features)
 errors = abs(predictions - test_labels)
 print("M A E: ", round(np.mean(errors), 2))
+
 
 # Visualization
 feature_list = [1, 2, 3, 4, 5, 6]
