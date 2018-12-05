@@ -34,7 +34,7 @@ X, y = make_classification(n_samples=10000, n_features=6,
                             random_state=0, shuffle=True)
 
 print(X.shape)  # 10000x6
-print(y)        # 10000
+print(y.shape)  # 10000
 
 # TODO: Feature extraction using sliding window
 
